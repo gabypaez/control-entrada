@@ -186,9 +186,6 @@ $usuario = usuario(); //Usuario logueado que se actualiza en cada peticion
       case 'editar_invitado':
         include_once(dirname(__FILE__)."/../editar_invitado.php");
       break;
-      case 'generar_entrada':
-        include_once(dirname(__FILE__)."/../generar_entrada.php");
-      break;
       case 'qr_generator':
         include_once(dirname(__FILE__)."/../qr_generator.php");
       break;
