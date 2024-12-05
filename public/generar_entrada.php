@@ -23,17 +23,17 @@ $id = $_GET['id'];
               }
           }
 
+          
 
 
-
-          //QRcode::png("Hola","test.png");
+          QRcode::png("$dni","test.png");
           // Create an instance of the class:
           $mpdf = new \Mpdf\Mpdf();
           
           // Write some HTML code:
-          $mpdf->WriteHTML('Hello World');
+          $mpdf->WriteHTML('');
           
-          //$mpdf->Image('test.png', 10, 10, 20, 20, 'png', '', true, false);
+          $mpdf->Image('test.png', 10, 10, 20, 20, 'png', '', true, false);
           
           // Output a PDF file directly to the browser
           $mpdf->Output();
