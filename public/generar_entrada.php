@@ -6,6 +6,10 @@ require_once(dirname(__FILE__).'/../phpqrcode/qrlib.php');
 
 
 $id = $_GET['id'];
+
+$password="cambiar_este-valor-en-produccion";
+$id=openssl_decrypt($id,"AES-128-ECB",$password);
+
           if ($id) {
       
               $consulta = "SELECT  * FROM invitados WHERE id = $id";
