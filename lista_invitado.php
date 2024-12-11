@@ -49,6 +49,7 @@
                         <th>Nombre y Apellido</th> 
                         <th>Correo</th>
                         <th>Celular</th>
+                        <th>Generar Entrada</th>
                         <th>Operaciones</th>             
                     </tr>
                   </thead>
@@ -58,7 +59,7 @@
                   $consulta = "SELECT * FROM  invitados";
 
         
-        $resultados = mysqli_query($conexion,$consulta);
+                   $resultados = mysqli_query($conexion,$consulta);
 
                       if ($resultados) {
 
@@ -75,7 +76,8 @@
                             <td><?=$correo?></td>
                             <td><?=$celular?></td>
                             <td><a class='btn btn-success' target="_blank" href='/borrador.php?dni=<?=$dni?>'> <i class='icon-edit'></i> Entrada</a></td>
-                            <td><a class='btn btn-info' href='/index.php?menu=editar_invitado&id=<?=$id?>'> <i class='icon-edit'></i> Editar</a> <a class='btn btn-danger' onclick='return confirm(`¿Está seguro que desea eliminar el problema?`)' href='/index.php?menu=borrar_invitado&id=<?=$id?>'> <i class='icon-trash'></i>Eliminar</a></td></td>
+                            <td><a class='btn btn-info' href='/index.php?menu=editar_invitado&id=<?=$id?>'> <i class='icon-edit'></i> Editar</a> <a class='btn btn-danger' onclick='return confirm(`¿Está seguro que desea eliminar el problema?`)' href='/index.php?menu=borrar_invitado&id=<?=$id?>'> <i class='icon-trash'></i>Eliminar</a></td>
+                            </tr>
                     <?php
                         }
                       }
@@ -103,13 +105,13 @@
             {
                 extend: 'csv',
                 exportOptions: {
-                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                    columns: [ 0, 1, 2, 3, 4,  ]
                 }
             },
             {
                 extend: 'excel',
                 exportOptions: {
-                    columns: [ 0, 1, 2, 3, 4, 5 ]
+                    columns: [ 0, 1, 2, 3, 4, ]
                 }
             },
         ],

@@ -18,6 +18,7 @@ $dni = $_GET['dni'];
                   $nombre=$fila['nombre'];
                   $dni= $fila['dni'];
                   $correo=$fila['correo'];
+                  $id=$fila['id'];
                   
 
               } else {
@@ -50,7 +51,7 @@ $dni = $_GET['dni'];
     # Encabezado y datos de la empresa #
     $pdf->SetFont('Arial','B',10);
     $pdf->SetTextColor(0,0,0);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Nombre de empresa")),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ministerio de Ciencias e Inovacion Tecnologica")),0,'C',false);
     $pdf->SetFont('Arial','',9);
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","RUC: 0000000000"),0,'C',false);
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Direccion San Salvador, El Salvador"),0,'C',false);
@@ -62,18 +63,17 @@ $dni = $_GET['dni'];
     $pdf->Ln(5);
 
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Fecha: ".date("d/m/Y", strtotime("13-09-2022"))." ".date("h:s A")),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Caja Nro: 1"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Cajero: Carlos Alfaro"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Lugar: Escuela Industrial"),0,'C',false);
     $pdf->SetFont('Arial','B',10);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ticket Nro: 1")),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ticket Nro: $id")),0,'C',false);
     $pdf->SetFont('Arial','',9);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","------------------------------------------------------"),0,0,'C');
     $pdf->Ln(5);
 
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Cliente: Carlos Alfaro"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Documento: DNI 00000000"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Invitado: $nombre"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Documento: $dni"),0,'C',false);
     //$pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Teléfono: 00000000"),0,'C',false);
     //$pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Dirección: San Salvador, El Salvador, Centro America"),0,'C',false);
 
@@ -82,7 +82,7 @@ $dni = $_GET['dni'];
    // $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","*** Precios de productos incluyen impuestos. Para poder realizar un reclamo o devolución debe de presentar este ticket ***"),0,'C',false);
 
     $pdf->SetFont('Arial','B',9);
-    $pdf->Cell(0,7,iconv("UTF-8", "ISO-8859-1","Gracias por su compra"),'',0,'C');
+    $pdf->Cell(0,7,iconv("UTF-8", "ISO-8859-1","Gracias por Particiar"),'',0,'C');
 
     $pdf->Ln(9);
 
