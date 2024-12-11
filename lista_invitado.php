@@ -74,7 +74,7 @@
                             <td><?=$nombre?></td>
                             <td><?=$correo?></td>
                             <td><?=$celular?></td>
-                            <td><a class='btn btn-success' target="_blank" href='/generar_entrada.php?id=<?=$id?>'> <i class='icon-edit'></i> Entrada</a></td>
+                            <td><a class='btn btn-success' target="_blank" href='/generar_entrada.php?dni=<?=$dni?>'> <i class='icon-edit'></i> Entrada</a></td>
                             <td><a class='btn btn-info' href='/index.php?menu=editar_invitado&id=<?=$id?>'> <i class='icon-edit'></i> Editar</a> <a class='btn btn-danger' onclick='return confirm(`¿Está seguro que desea eliminar el problema?`)' href='/index.php?menu=borrar_invitado&id=<?=$id?>'> <i class='icon-trash'></i>Eliminar</a></td></td>
                     <?php
                         }

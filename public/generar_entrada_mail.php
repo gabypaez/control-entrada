@@ -7,6 +7,8 @@ require_once(dirname(__FILE__).'/../phpqrcode/qrlib.php');
 
 $dni = $_GET['dni'];
 
+$password="nfdjs789456fdjshfdjsfin&&%%%8uwrjewm";
+$dni=openssl_decrypt($dni,"AES-128-ECB",$password);
 
           if ($dni) {
       
@@ -35,8 +37,6 @@ $dni = $_GET['dni'];
           
           // Write some HTML code:
           $mpdf->WriteHTML('Nombre: '.$nombre.'  DNI: '.$dni.'');
-          
-         
           
           $mpdf->Image('test.png', 10, 50, 20, 20, 'png', '', true, false);
           
