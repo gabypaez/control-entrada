@@ -51,12 +51,18 @@ $dni = $_GET['dni'];
     # Encabezado y datos de la empresa #
     $pdf->SetFont('Arial','B',10);
     $pdf->SetTextColor(0,0,0);
+    $pdf->Image('logo1.svg', 60, 10, 90, 30, 'svg', '', true, false);
+    
+    $pdf->Ln(1);
+    $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","------------------------------------------------------"),0,0,'C');
+    $pdf->Ln(5);
+    
     $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1",strtoupper("Ministerio de Ciencias e Inovacion Tecnologica")),0,'C',false);
     $pdf->SetFont('Arial','',9);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","RUC: 0000000000"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Direccion San Salvador, El Salvador"),0,'C',false);
+    //$pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","RUC: 0000000000"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","CAPE, Pabellon 26"),0,'C',false);
    // $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Teléfono: 00000000"),0,'C',false);
-    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Email: correo@ejemplo.com"),0,'C',false);
+    $pdf->MultiCell(0,5,iconv("UTF-8", "ISO-8859-1","Email: mincienciaeinovacion@gmail.com"),0,'C',false);
 
     $pdf->Ln(1);
     $pdf->Cell(0,5,iconv("UTF-8", "ISO-8859-1","------------------------------------------------------"),0,0,'C');
@@ -94,5 +100,5 @@ $dni = $_GET['dni'];
     
     # Nombre del archivo PDF #*/
 
-    $pdf->Image('test.png', 90, 80, 30, 30, 'png', '', true, false);
+    $pdf->Image('test.png', 90, 110, 30, 30, 'png', '', true, false);
     $pdf->Output();
